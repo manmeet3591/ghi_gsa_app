@@ -25,7 +25,7 @@ def main():
     # Query the nearest neighbor value and convert to CSV
     try:
         selected_data = ds.sel(latitude=lat, method='nearest').sel(longitude=lon, method='nearest').to_dataframe()
-        csv_file = selected_data.to_csv(index=False)
+        csv_file = selected_data.to_csv(index=True)
 
         # Download button for CSV file
         st.download_button(
